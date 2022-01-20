@@ -31,22 +31,25 @@ const App = () => {
     setGridData(persons_data);
   }, []);
 
-  const process = (grid_data: any) => {
-    if (IsEditMode) {
-      return mapTree(grid_data, subItemsField, (item) =>
-        extendDataItem(item, subItemsField, {
-          [expandField]: true,
-          [editField]: true,
-        })
-      );
-    } else {
-      return mapTree(persons_data, subItemsField, (item) =>
-        extendDataItem(item, subItemsField, {
-          [expandField]: true,
-        })
-      );
-    }
-  };
+  const process = React.useCallback(
+    (grid_data: any) => {
+      if (IsEditMode) {
+        return mapTree(grid_data, subItemsField, (item) =>
+          extendDataItem(item, subItemsField, {
+            [expandField]: true,
+            [editField]: true,
+          })
+        );
+      } else {
+        return mapTree(persons_data, subItemsField, (item) =>
+          extendDataItem(item, subItemsField, {
+            [expandField]: true,
+          })
+        );
+      }
+    },
+    [IsEditMode]
+  );
 
   const onItemChange = React.useCallback(
     (event) => {
