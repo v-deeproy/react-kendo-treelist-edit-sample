@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
 import './style.css';
 
 import persons_data from './data/sample_data';
@@ -71,12 +70,6 @@ const App = () => {
     { field: '_id', title: 'ID', width: '280px' },
     { field: 'index', title: 'index', width: '380px' },
     { field: 'guid', title: 'Guid', width: '380px' },
-    {
-      field: 'isActive',
-      title: 'is Active?',
-      width: '380px',
-      editCell: TreeListBooleanEditor,
-    },
     {
       field: 'age',
       title: 'Age',
@@ -169,7 +162,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Sample </h1>
+      <h3>Sample Kendo Treelist Edit Demo</h3>
       <div>
         <button className="btn" onClick={btnClickToogleEditView}>
           {IsEditMode ? 'Toogle to Default View' : 'Edit'}

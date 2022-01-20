@@ -16,12 +16,12 @@ p {
   width: 150px !important;
 }
 .main_wrapper {
-  padding: 5px;
-  margin: 5px;
+  padding: 2px;
+  margin: 2px;
 }
 .grid_wrapper {
-  margin: 5px;
-  padding: 5px;
+  margin: 2px;
+  padding: 2px;
   border: 2px solid green;
 }
 .btn {
